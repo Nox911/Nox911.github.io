@@ -1,0 +1,241 @@
+$header-color:#4d4e68;
+$active-color:#ffe13e;
+$white-color:#fff;
+
+@font-face {
+	font-family: rockwell-reg;
+	src: url(../font/RockwellRegular.ttf);
+}
+
+@mixin rockwell-reg {
+	font-family: rockwell-reg, sans-serif;
+	font-weight: 400;
+}
+
+@mixin rockwell-bold {
+	font-family: rockwell-reg, sans-serif;
+	font-weight: 700;
+}
+
+@mixin lato-reg {
+font-family: 'Lato', sans-serif;
+font-weight: 400;
+}
+
+@mixin lato-bold {
+font-family: 'Lato', sans-serif;
+font-weight: 700;
+}
+
+@mixin raleway-reg {
+font-family: 'Raleway', sans-serif;
+font-weight: 400;
+}
+
+@mixin raleway-semibold {
+font-family: 'Raleway', sans-serif;
+font-weight: 600;
+}
+
+@mixin raleway-bold {
+font-family: 'Raleway', sans-serif;
+font-weight: 700;
+}
+
+
+
+
+
+
+html {
+	font-size: 10px;
+}
+
+body {
+	width: 140rem;
+	color: #000;
+	margin: 0 auto;
+}
+
+.btn-m {
+	color: $header-color;
+	background-color: $active-color;
+}
+
+.header {
+	background-image: url("../img/header-bg.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	width: 140rem;
+  height: 94rem;
+  &-top {
+  	height: 14.6rem;
+		background-color: #fff;}
+
+
+&-logo {
+	&-img {
+		line-height: 14.6rem;
+		vertical-align: middle;
+		display: inline-block;
+		}
+	&-text {
+		display: inline-block;
+		@include rockwell-reg;
+		font-size: 3rem;
+		padding-left: 1rem;
+		color: $header-color;
+		line-height: 14.6rem;
+		vertical-align: middle;
+	}
+}
+
+&-nav {
+	li {
+		display: inline-block;
+	}
+		&-item {
+		line-height: 14.6rem;
+		vertical-align: middle;
+		padding-left: 4rem;
+		color: $header-color;
+		font-size: 1.6rem;
+		@include raleway-reg;
+		text-decoration:none;
+		text-transform:uppercase;
+
+		&:hover {
+			text-decoration: none;
+			color: lighten($header-color, 20%);
+			text-shadow:2px 2px 2px $header-color;
+		}
+		}
+		.active {
+			color: $active-color;
+			text-shadow:2px 2px 2px $header-color;
+			&:hover {
+				text-shadow: none;
+			}
+		}
+}
+
+
+
+&-fallback {
+	@include raleway-semibold;
+
+	&-text {
+	font-size: 1.2rem;
+	color:$header-color;
+	padding-top: 4.0rem;
+	margin-left: -2rem;
+	}
+	&-btn {
+		display: inline-block;
+		height: 4rem;
+		width: 13rem;
+		margin-top: 2.4rem;
+		line-height: 4rem;
+		vertical-align: middle;
+		text-align: center;
+		font-size: 1.4rem;
+		margin-left: -2.3rem;
+
+	}
+	&-phone {
+		display: inline-block;
+		margin-top: 2.4rem;
+		line-height: 4rem;
+		vertical-align: middle;
+		text-align: center;
+		@include lato-bold;
+		font-size: 2.4rem;
+		margin-left: 1.4rem;
+		padding-left: 1.5rem;
+		border-left: 2px solid $active-color;
+
+
+	}
+}
+	&-bottom {
+	color:$white-color;
+	text-align: center;
+
+	}
+
+	&-main-text {
+		padding-top: 23rem;
+		@include rockwell-reg;
+		font-size: 4.8rem;
+
+		
+	}
+	&-feature {
+		padding: 4rem 0;
+		@include raleway-reg;
+		font-size: 3rem;
+	}
+
+	&-form {
+		
+		margin: 4rem auto 0;
+		@include raleway-bold;
+		font-size: 1.8rem;
+		background-color: #d4dddd;
+		height: 9rem;
+		width: 57rem;
+		text-align: center;	
+		padding: 2rem;
+
+
+
+		&-domain {
+			
+			display: inline-block;
+			width: 26rem;
+			line-height: 5rem;
+			vertical-align: middle;
+			text-align: center;
+			border:none;
+			background-color: $white-color;
+			@include raleway-reg;
+			font-size: 1.8rem;
+			color: $header-color;
+			&:focus {
+				outline:none;
+			}
+		}
+		&-com {
+			margin-left: -0.5rem;
+			display: inline-block;
+			width: 11rem;
+			line-height: 5rem;
+			vertical-align: middle;
+			color: #000;
+			background-color: $active-color;
+			-webkit-margin-before: 0em;
+   		-webkit-margin-after: 0em;
+
+		}
+		&-btn {
+		
+			border:none;
+			display: inline-block;
+			width: 15rem;		
+			line-height: 5rem;
+			vertical-align: middle;
+			color: $white-color;
+			background-color: $active-color;
+			@include raleway-bold;
+			font-size: 1.4rem;
+		}
+
+	}
+
+}
+
+input[type="text"], input[type="button"] {
+	padding: 0;
+	margin: 0;
+}
